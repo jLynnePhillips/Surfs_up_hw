@@ -54,7 +54,7 @@ def precipitation():
     results = session.query(Measurement.date,Measurement.prcp).filter(Measurement.date>dt.date(2016,8,24)).all()
 
     # create dictionary
-    prcp_dict = {date: prcp for date, prcp in precipitation}
+    prcp_dict = {date: prcp for date, prcp in results}
     
     return jsonify(prcp_dict)
 
